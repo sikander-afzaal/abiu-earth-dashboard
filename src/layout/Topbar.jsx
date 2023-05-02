@@ -1,11 +1,32 @@
-const Topbar = () => {
+const Topbar = ({ setSidebarToggle }) => {
   return (
     <div className="topbar flex justify-between items-center px-8 w-full">
-      <p className="text-primaryShade text-2xl font-bold">
-        Automated Emissions analysis
-      </p>
+      <div className="flex justify-start items-center gap-2">
+        <button
+          onClick={() => setSidebarToggle(true)}
+          className="xl:hidden block text-white"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-7 h-7"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+            />
+          </svg>
+        </button>
+        <p className="text-primaryShade sm:block hidden text-xl lg:text-2xl font-bold">
+          Automated Emissions analysis
+        </p>
+      </div>
       <div className="flex justify-center items-center gap-4">
-        <div className="w-[260px] rounded-[10px] overflow-hidden border-baseGray border border-solid p-3 flex justify-start bg-[#282C38] items-center gap-3">
+        <div className="w-[260px] rounded-[10px] overflow-hidden border-baseGray border border-solid p-3 hidden lg:flex justify-start bg-[#282C38] items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

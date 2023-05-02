@@ -14,6 +14,7 @@ export default {
         primaryShade: "#557565",
         baseGray: "#3C4254",
         primary: "#282C38",
+        title: "#030229",
       },
     },
   },

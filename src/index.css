@@ -9,7 +9,17 @@
     @apply bg-bgDark;
   }
 }
-
+@layer utilities {
+  .wrapper {
+    @apply flex justify-start items-center flex-col w-full;
+  }
+  .contain {
+    @apply flex w-[90%] xl:w-[95%] max-w-[1500px];
+  }
+  .title {
+    @apply text-title text-lg font-bold;
+  }
+}
 .grid-area {
   grid-template-areas:
     "sidebar topbar"
@@ -23,4 +33,11 @@
 }
 .topbar {
   grid-area: topbar;
+}
+@media screen and (max-width: 1280px) {
+  .grid-area {
+    grid-template-areas:
+      " topbar"
+      " main";
+  }
 }

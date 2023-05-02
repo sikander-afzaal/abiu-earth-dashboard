@@ -1,18 +1,71 @@
 import { Link, useLocation } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ sidebarToggle, setSidebarToggle }) => {
   return (
-    <div className="sidebar w-full   flex gap-10 justify-start items-start py-8 flex-col border-r border-solid border-[#282C38]">
+    <div
+      className={`sidebar xl:bg-transparent bg-bgDark w-full   flex gap-10 justify-start items-start py-8 flex-col border-r border-solid border-[#282C38] top-0 h-full xl:h-auto xl:max-h-screen overflow-y-auto fixed ${
+        sidebarToggle ? "left-0" : "-left-full"
+      }   xl:sticky transition-all duration-700`}
+    >
+      <button
+        onClick={() => setSidebarToggle(false)}
+        className="absolute top-5 right-3 text-white xl:hidden block"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-7 h-7"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
       <div className="flex justify-start pb-5 px-5 items-center w-full border-b border-solid border-b-[#282C38]">
         <img src="/logo.png" alt="" className="w-[130px] object-contain" />
       </div>
       <div className="flex w-full justify-start items-start flex-col gap-4">
-        <SidebarLink ico="/category.png" name="Dashboard" url="/" />
-        <SidebarLink ico="/statistic.png" name="Suppliers" url="/suppliers" />
-        <SidebarLink ico="/target.png" name="Targeting" url="/targeting" />
-        <SidebarLink ico="/bag.png" name="Baseline Year" url="/baseline" />
-        <SidebarLink ico="/export.png" name="Export" url="/export" />
-        <SidebarLink ico="/upload.png" name="Upload" url="/upload" />
+        <SidebarLink
+          setSidebarToggle={setSidebarToggle}
+          ico="/category.png"
+          name="Dashboard"
+          url="/"
+        />
+        <SidebarLink
+          setSidebarToggle={setSidebarToggle}
+          ico="/statistic.png"
+          name="Suppliers"
+          url="/suppliers"
+        />
+        <SidebarLink
+          setSidebarToggle={setSidebarToggle}
+          ico="/target.png"
+          name="Targeting"
+          url="/targeting"
+        />
+        <SidebarLink
+          setSidebarToggle={setSidebarToggle}
+          ico="/bag.png"
+          name="Baseline Year"
+          url="/baseline"
+        />
+        <SidebarLink
+          setSidebarToggle={setSidebarToggle}
+          ico="/export.png"
+          name="Export"
+          url="/export"
+        />
+        <SidebarLink
+          setSidebarToggle={setSidebarToggle}
+          ico="/upload.png"
+          name="Upload"
+          url="/upload"
+        />
       </div>
     </div>
   );
@@ -20,10 +73,11 @@ const Sidebar = () => {
 
 export default Sidebar;
 
-const SidebarLink = ({ url, name, ico }) => {
+const SidebarLink = ({ url, name, ico, setSidebarToggle }) => {
   const { pathname } = useLocation();
   return (
     <Link
+      onClick={() => setSidebarToggle(false)}
       to={url}
       className={`${
         pathname === url ? "bg-secondary" : "bg-transparent"

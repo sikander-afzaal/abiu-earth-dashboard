@@ -9,6 +9,10 @@ export default {
         sans: ["Nunito", ...defaultTheme.fontFamily.sans],
         inter: ["Inter"],
       },
+      backgroundImage: {
+        exportSelected:
+          "linear-gradient(90deg, #5CBF90 0%, rgba(92, 191, 144, 0) 91.25%)",
+      },
       colors: {
         secondary: "#5CBF90",
         bgDark: "#010101",

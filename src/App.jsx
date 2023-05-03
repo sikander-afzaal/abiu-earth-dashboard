@@ -4,6 +4,8 @@ import Sidebar from "./layout/Sidebar";
 import Topbar from "./layout/Topbar";
 import { useState } from "react";
 import Upload from "./pages/upload/Index";
+import Export from "./pages/export/Index";
+import Baseline from "./pages/baseline/Index";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -23,6 +25,8 @@ const App = () => {
         <Routes>
           <Route element={<Dashboard />} path="/" />
           <Route element={<Upload />} path="/upload" />
+          <Route element={<Export />} path="/export" />
+          <Route element={<Baseline />} path="/baseline" />
         </Routes>
       </div>
     </div>

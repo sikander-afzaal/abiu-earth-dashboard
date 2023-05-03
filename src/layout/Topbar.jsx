@@ -1,10 +1,19 @@
+import { useLocation } from "react-router-dom";
+
 const Topbar = ({ setSidebarToggle }) => {
+  const { pathname } = useLocation();
   return (
-    <div className="topbar flex justify-between items-center px-8 w-full">
+    <div
+      className={`topbar  flex justify-between items-center px-8 w-full ${
+        pathname !== "/" ? "bg-[#F8FAFC]" : ""
+      }`}
+    >
       <div className="flex justify-start items-center gap-2">
         <button
           onClick={() => setSidebarToggle(true)}
-          className="xl:hidden block text-white"
+          className={`xl:hidden block ${
+            pathname !== "/" ? "text-black" : "text-white"
+          }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +35,13 @@ const Topbar = ({ setSidebarToggle }) => {
         </p>
       </div>
       <div className="flex justify-center items-center gap-4">
-        <div className="w-[260px] rounded-[10px] overflow-hidden border-baseGray border border-solid p-3 hidden lg:flex justify-start bg-[#282C38] items-center gap-3">
+        <div
+          className={`w-[260px] rounded-[10px] overflow-hidden  border border-solid p-3 hidden lg:flex justify-start ${
+            pathname !== "/"
+              ? "bg-white border-[#CBD5E1]"
+              : "bg-[#282C38] border-baseGray"
+          } items-center gap-3`}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -53,7 +68,13 @@ const Topbar = ({ setSidebarToggle }) => {
           />
         </div>
         <div className="bg-primary h-[23px] w-[2px]"></div>
-        <img src="/bell.png" className="w-[32px] object-contain" alt="" />
+        <img
+          src="/bell.png"
+          className={`w-[32px] object-contain ${
+            pathname !== "/" ? "invert" : "invert-0"
+          }`}
+          alt=""
+        />
         <div className="bg-primary h-[23px] w-[2px]"></div>
         <img
           src="/user.png"

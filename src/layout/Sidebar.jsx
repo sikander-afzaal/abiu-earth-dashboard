@@ -5,7 +5,7 @@ const Sidebar = ({ sidebarToggle, setSidebarToggle }) => {
     <div
       className={`sidebar xl:bg-transparent bg-bgDark w-full   flex gap-10 justify-start items-start py-8 flex-col border-r border-solid border-[#282C38] top-0 h-full xl:h-auto xl:max-h-screen overflow-y-auto fixed ${
         sidebarToggle ? "left-0" : "-left-full"
-      }   xl:sticky transition-all duration-700`}
+      }   xl:sticky transition-all duration-700 z-[90]`}
     >
       <button
         onClick={() => setSidebarToggle(false)}

@@ -44,6 +44,12 @@ const Sidebar = ({ sidebarToggle, setSidebarToggle }) => {
         />
         <SidebarLink
           setSidebarToggle={setSidebarToggle}
+          ico="/settings.png"
+          name="Offsetting"
+          url="/offset"
+        />
+        <SidebarLink
+          setSidebarToggle={setSidebarToggle}
           ico="/target.png"
           name="Targeting"
           url="/targeting"

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SelectMenu from "../../components/form/SelectMenu";
 import InputField from "../../components/form/InputField";
+import Table from "./Table";
 
 const Targeting = () => {
   const [formData, setFormData] = useState({
@@ -14,8 +15,8 @@ const Targeting = () => {
   });
   return (
     <div className="wrapper">
-      <div className="contain flex-col justify-start items-center gap-6">
-        <div className="w-full px-5 flex justify-between items-center gap-3 border border-solid border-borderGray h-[84px] rounded-[10px]">
+      <div className="contain overflow-x-hidden flex-col justify-start items-center gap-6">
+        <div className="w-full bg-white px-5 flex justify-between items-center gap-3 border border-solid border-borderGray h-[84px] rounded-[10px]">
           <h3 className="title">Scenerio Builder</h3>
           <button className="bg-secondary px-4 py-1.5 rounded-full text-white hover:text-secondary hover:bg-transparent transition-all duration-300 border border-solid border-secondary flex justify-center items-center gap-2">
             <svg
@@ -106,6 +107,7 @@ const Targeting = () => {
             />
           </div>
         </div>
+        <Table />
       </div>
     </div>
   );

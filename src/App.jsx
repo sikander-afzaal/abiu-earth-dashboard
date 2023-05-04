@@ -7,11 +7,16 @@ import Baseline from "./pages/dashboard/baseline/Index";
 import Targeting from "./pages/dashboard/targeting/Index";
 import Offsetting from "./pages/dashboard/offsetting/Index";
 import Suppliers from "./pages/dashboard/suppliers/Index";
+import SignUp from "./pages/sign-up/Index";
+import Choose from "./pages/sign-up/Choose";
 
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />}>
+      <Route element={<SignUp />} path="/">
+        <Route element={<Choose />} path="" />
+      </Route>
+      <Route path="/dashboard" element={<Dashboard />}>
         <Route element={<Home />} path="" />
         <Route element={<Upload />} path="upload" />
         <Route element={<Export />} path="export" />

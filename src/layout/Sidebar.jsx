@@ -84,7 +84,7 @@ const SidebarLink = ({ url, name, ico, setSidebarToggle }) => {
   return (
     <Link
       onClick={() => setSidebarToggle(false)}
-      to={url}
+      to={`/dashboard${url}`}
       className={`${
         pathname === url ? "bg-secondary" : "bg-transparent"
       } w-full p-4 flex justify-start items-center gap-6`}

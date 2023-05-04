@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SelectMenu from "../../components/form/SelectMenu";
+import SelectMenu from "../../../components/form/SelectMenu";
 
 const BottomPart = () => {
   const [filters, setFilters] = useState({

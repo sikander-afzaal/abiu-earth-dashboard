@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SelectMenu from "../../components/form/SelectMenu";
-import InputField from "../../components/form/InputField";
+import SelectMenu from "../../../components/form/SelectMenu";
+import InputField from "../../../components/form/InputField";
 import Table from "./Table";
 
 const Targeting = () => {

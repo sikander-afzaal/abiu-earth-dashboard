@@ -1,7 +1,19 @@
 import { useLocation } from "react-router-dom";
+import Notification from "../components/Notification";
+import { useCallback, useRef, useState } from "react";
+import { useOnClickOutside } from "../hooks/useOutsideClick";
 
 const Topbar = ({ setSidebarToggle }) => {
+  const notifBarRef = useRef(null);
   const { pathname } = useLocation();
+  const [notifBar, setNotifBar] = useState(false);
+  useOnClickOutside(
+    notifBarRef,
+    useCallback(() => {
+      setNotifBar(false);
+    }, [])
+  );
+
   return (
     <div
       className={`topbar  flex justify-between items-center px-8 w-full ${
@@ -76,11 +88,16 @@ const Topbar = ({ setSidebarToggle }) => {
           alt=""
         />
         <div className="bg-primary h-[23px] w-[2px]"></div>
-        <img
-          src="/user.png"
-          className="w-[42px] object-contain h-[42px] rounded-full"
-          alt=""
-        />
+        <div ref={notifBarRef} className="relative">
+          <button onClick={() => setNotifBar((prev) => !prev)}>
+            <img
+              src="/user.png"
+              className="w-[42px] object-contain h-[42px] rounded-full"
+              alt=""
+            />
+          </button>
+          {notifBar && <Notification />}
+        </div>
       </div>
     </div>
   );

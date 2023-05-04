@@ -22,6 +22,9 @@ export default {
         title: "#030229",
         borderGray: "#E2E8F0",
       },
+      boxShadow: {
+        notif: "0px 15px 71px rgba(5, 5, 5, 0.27)",
+      },
     },
   },
   plugins: [],

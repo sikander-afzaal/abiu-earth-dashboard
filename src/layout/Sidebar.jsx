@@ -1,9 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ sidebarToggle, setSidebarToggle }) => {
   return (
     <div
-      className={`sidebar xl:bg-transparent bg-bgDark w-full   flex gap-10 justify-start items-start py-8 flex-col border-r border-solid border-[#282C38] top-0 h-full xl:h-auto xl:max-h-screen overflow-y-auto fixed ${
+      className={`sidebar  bg-bgDark w-full   flex gap-10 justify-start items-start py-8 flex-col border-r border-solid border-[#282C38] top-0 h-full xl:h-auto xl:max-h-screen overflow-y-auto fixed ${
         sidebarToggle ? "left-0" : "-left-full"
       }   xl:sticky transition-all duration-700 z-[90]`}
     >
@@ -80,31 +80,35 @@ const Sidebar = ({ sidebarToggle, setSidebarToggle }) => {
 export default Sidebar;
 
 const SidebarLink = ({ url, name, ico, setSidebarToggle }) => {
-  const { pathname } = useLocation();
   return (
-    <Link
+    <NavLink
+      end
       onClick={() => setSidebarToggle(false)}
       to={`/dashboard${url}`}
-      className={`${
-        pathname === url ? "bg-secondary" : "bg-transparent"
-      } w-full p-4 flex justify-start items-center gap-6`}
+      className={({ isActive }) =>
+        `w-full p-4 flex justify-start items-center gap-6 ${
+          isActive ? "bg-secondary" : "bg-transparent"
+        }`
+      }
     >
-      <img
-        src={ico}
-        className={`${
-          url === pathname ? "invert brightness-0" : ""
-        } w-[28px] h-[28px] object-contain"`}
-        alt=""
-      />
-      <p
-        className={`${
-          pathname === url
-            ? "font-bold text-white"
-            : "font-medium text-[#94A3B8]"
-        }  font-inter  text-2xl`}
-      >
-        {name}
-      </p>
-    </Link>
+      {({ isActive }) => (
+        <>
+          <img
+            src={ico}
+            className={`${
+              isActive ? "invert brightness-0" : ""
+            } w-[28px] h-[28px] object-contain"`}
+            alt=""
+          />
+          <p
+            className={`${
+              isActive ? "font-bold text-white" : "font-medium text-[#94A3B8]"
+            }  font-inter  text-2xl`}
+          >
+            {name}
+          </p>
+        </>
+      )}
+    </NavLink>
   );
 };

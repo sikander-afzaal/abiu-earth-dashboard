@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  /* body {
     @apply bg-bgDark;
-  }
+  } */
 }
 @layer utilities {
   .wrapper {

@@ -9,12 +9,14 @@ import Offsetting from "./pages/dashboard/offsetting/Index";
 import Suppliers from "./pages/dashboard/suppliers/Index";
 import SignUp from "./pages/sign-up/Index";
 import Choose from "./pages/sign-up/Choose";
+import Create from "./pages/sign-up/Create";
 
 const App = () => {
   return (
     <Routes>
       <Route element={<SignUp />} path="/">
         <Route element={<Choose />} path="" />
+        <Route element={<Create />} path="create" />
       </Route>
       <Route path="/dashboard" element={<Dashboard />}>
         <Route element={<Home />} path="" />

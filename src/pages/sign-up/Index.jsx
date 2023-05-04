@@ -1,10 +1,16 @@
+import { Outlet } from "react-router-dom";
+
 const SignUp = () => {
   return (
-    <div className="wrapper min-h-[750px] h-screen">
-      <div className="flex justify-center w-full h-full items-center"></div>
-      <div className="flex bg-black justify-center w-full h-full p-10 items-center">
-        <img src="/logo2.png" className="w-[180px] object-contain" alt="" />
-        <p className="text-white text-[40px] font-bold font-inter text-center  mt-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 w-full lg:py-0 py-10 h-auto min-h-screen lg:min-h-[750px] lg:h-screen">
+      <div className="flex justify-center  items-center">
+        <Outlet />
+      </div>
+      <div className="hidden lg:flex bg-black justify-between  p-10 flex-col items-center">
+        <div className="w-full h-full grid place-items-center">
+          <img src="/logo2.png" className="w-[180px] object-contain" alt="" />
+        </div>
+        <p className="text-white text-2xl 2xl:leading-[1.2] 2xl:text-[40px] font-bold font-inter text-center  ">
           Be a part of the revolution and join companies that are taking
           responsibility for their carbon footprint.
         </p>

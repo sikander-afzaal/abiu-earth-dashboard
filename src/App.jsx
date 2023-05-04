@@ -6,6 +6,7 @@ import { useState } from "react";
 import Upload from "./pages/upload/Index";
 import Export from "./pages/export/Index";
 import Baseline from "./pages/baseline/Index";
+import Targeting from "./pages/targeting/Index";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -27,6 +28,7 @@ const App = () => {
           <Route element={<Upload />} path="/upload" />
           <Route element={<Export />} path="/export" />
           <Route element={<Baseline />} path="/baseline" />
+          <Route element={<Targeting />} path="/targeting" />
         </Routes>
       </div>
     </div>

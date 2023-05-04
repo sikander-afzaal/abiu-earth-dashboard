@@ -20,6 +20,7 @@ export default {
         baseGray: "#3C4254",
         primary: "#282C38",
         title: "#030229",
+        borderGray: "#E2E8F0",
       },
     },
   },

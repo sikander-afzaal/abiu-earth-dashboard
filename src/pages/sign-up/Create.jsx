@@ -46,6 +46,7 @@ const Create = () => {
           name="pwd"
           ico="/form-icons/lock.png"
           type="password"
+          signup
         />
         <div className="w-full flex justify-start items-center flex-col mt-8 gap-5">
           <button className="bg-secondary rounded-xl w-full h-[56px] font-inter font-bold text-base hover:bg-transparent hover:text-secondary border-2 border-solid border-secondary transition-all duration-300 text-white grid place-items-center">

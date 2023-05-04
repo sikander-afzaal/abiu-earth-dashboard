@@ -7,6 +7,7 @@ const InputFieldIcon = ({
   type = "text",
   handler,
   name,
+  signup,
 }) => {
   return (
     <div className="flex justify-start items-start flex-col w-full gap-2">
@@ -21,7 +22,7 @@ const InputFieldIcon = ({
           className="w-full text-[#0F172A] font-semibold placeholder:font-normal placeholder:text-[#94A3B8] bg-none outline-none border-none"
         />
       </div>
-      {type === "password" && (
+      {type === "password" && signup && (
         <p className="text-xs font-inter text-[#64748b]">
           Your password must have at least 8 characters
         </p>

@@ -10,6 +10,12 @@ import Suppliers from "./pages/dashboard/suppliers/Index";
 import SignUp from "./pages/sign-up/Index";
 import Choose from "./pages/sign-up/Choose";
 import Create from "./pages/sign-up/Create";
+import Login from "./pages/login/Index";
+import Forgot_Pwd from "./pages/forgot_password/Index";
+import Step1 from "./pages/forgot_password/Step1";
+import NewPwd from "./pages/forgot_password/NewPwd";
+import Success from "./pages/forgot_password/Success";
+import Otp from "./pages/forgot_password/Otp";
 
 const App = () => {
   return (
@@ -18,6 +24,13 @@ const App = () => {
         <Route element={<Choose />} path="" />
         <Route element={<Create />} path="create" />
       </Route>
+      <Route element={<Forgot_Pwd />} path="/forgot_pwd">
+        <Route element={<Step1 />} path="" />
+        <Route element={<Otp />} path="otp" />
+        <Route element={<NewPwd />} path="new" />
+        <Route element={<Success />} path="success" />
+      </Route>
+      <Route element={<Login />} path="/login" />
       <Route path="/dashboard" element={<Dashboard />}>
         <Route element={<Home />} path="" />
         <Route element={<Upload />} path="upload" />

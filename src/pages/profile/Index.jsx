@@ -20,7 +20,7 @@ const Profile = () => {
         setSidebarToggle={setSidebarToggle}
         sidebarToggle={sidebarToggle}
       />
-      <div className="main overflow-x-hidden pb-6 pt-2 xl:pt-5 px-5 w-full ">
+      <div className="main overflow-x-hidden pb-6 pt-2 xl:pt-5 pr-0 w-[90%] xl:pr-6 mx-auto  xl:w-full ">
         <Outlet />
       </div>
     </div>

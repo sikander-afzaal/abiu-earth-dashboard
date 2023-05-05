@@ -3,7 +3,7 @@ import Notification from "../components/Notification";
 import { useCallback, useRef, useState } from "react";
 import { useOnClickOutside } from "../hooks/useOutsideClick";
 
-const Topbar = ({ setSidebarToggle, profile }) => {
+const Topbar = ({ setSidebarToggle, profile, title }) => {
   const notifBarRef = useRef(null);
   const { pathname } = useLocation();
   const [notifBar, setNotifBar] = useState(false);
@@ -69,7 +69,7 @@ const Topbar = ({ setSidebarToggle, profile }) => {
           </div>
         ) : (
           <p className="text-primaryShade sm:block hidden text-xl lg:text-2xl font-bold">
-            Automated Emissions analysis
+            {title}
           </p>
         )}
       </div>

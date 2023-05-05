@@ -17,14 +17,22 @@ const Topbar = ({ setSidebarToggle, profile, title }) => {
   return (
     <div
       className={`topbar  flex justify-between items-center px-8 w-full ${
-        pathname === "/dashboard" || profile ? "bg-bgDark" : "bg-[#F8FAFC]"
+        pathname === "/dashboard" ||
+        pathname === "/dashboard/analytics" ||
+        profile
+          ? "bg-bgDark"
+          : "bg-[#F8FAFC]"
       }`}
     >
       <div className="flex justify-start items-center gap-2">
         <button
           onClick={() => setSidebarToggle(true)}
           className={`xl:hidden block ${
-            pathname === "/dashboard" || profile ? "text-white" : "text-black"
+            pathname === "/dashboard" ||
+            pathname === "/dashboard/analytics" ||
+            profile
+              ? "text-white"
+              : "text-black"
           }`}
         >
           <svg
@@ -76,7 +84,9 @@ const Topbar = ({ setSidebarToggle, profile, title }) => {
       <div className="flex justify-center items-center gap-4">
         <div
           className={`w-[260px] rounded-[10px] overflow-hidden  border border-solid p-3 hidden lg:flex justify-start ${
-            pathname === "/dashboard" || profile
+            pathname === "/dashboard" ||
+            pathname === "/dashboard/analytics" ||
+            profile
               ? "bg-[#282C38] border-baseGray"
               : "bg-white border-[#CBD5E1]"
           } items-center gap-3`}
@@ -110,7 +120,11 @@ const Topbar = ({ setSidebarToggle, profile, title }) => {
         <img
           src="/bell.png"
           className={`w-[32px] object-contain ${
-            pathname === "/dashboard" || profile ? "invert-0" : "invert"
+            pathname === "/dashboard" ||
+            pathname === "/dashboard/analytics" ||
+            profile
+              ? "invert-0"
+              : "invert"
           }`}
           alt=""
         />

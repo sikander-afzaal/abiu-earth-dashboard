@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Sidebar = ({ sidebarToggle, setSidebarToggle }) => {
+  const { pathname } = useLocation();
   return (
     <div
       className={`sidebar  bg-bgDark w-full   flex gap-10 justify-start items-start py-8 flex-col border-r border-solid border-[#282C38] top-0 h-full xl:h-auto xl:max-h-screen overflow-y-auto fixed ${
@@ -35,6 +36,7 @@ const Sidebar = ({ sidebarToggle, setSidebarToggle }) => {
           ico="/category.png"
           name="Dashboard"
           url=""
+          end={pathname === "/dashboard/analytics" ? false : true}
         />
         <SidebarLink
           setSidebarToggle={setSidebarToggle}
@@ -79,10 +81,10 @@ const Sidebar = ({ sidebarToggle, setSidebarToggle }) => {
 
 export default Sidebar;
 
-const SidebarLink = ({ url, name, ico, setSidebarToggle }) => {
+const SidebarLink = ({ url, name, ico, setSidebarToggle, end = true }) => {
   return (
     <NavLink
-      end
+      end={end}
       onClick={() => setSidebarToggle(false)}
       to={`/dashboard${url}`}
       className={({ isActive }) =>
@@ -103,7 +105,7 @@ const SidebarLink = ({ url, name, ico, setSidebarToggle }) => {
           <p
             className={`${
               isActive ? "font-bold text-white" : "font-medium text-[#94A3B8]"
-            }  font-inter  text-2xl`}
+            }  font-inter  text-xl`}
           >
             {name}
           </p>

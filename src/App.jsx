@@ -18,6 +18,7 @@ import Success from "./pages/forgot_password/Success";
 import Otp from "./pages/forgot_password/Otp";
 import Profile from "./pages/profile/Index";
 import PersonalInfo from "./pages/profile/PersonalInfo";
+import Analytics from "./pages/dashboard/analytics/Index";
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
         <Route element={<Targeting />} path="targeting" />
         <Route element={<Offsetting />} path="offset" />
         <Route element={<Suppliers />} path="suppliers" />
+        <Route element={<Analytics />} path="analytics" />
       </Route>
     </Routes>
   );

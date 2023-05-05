@@ -48,7 +48,9 @@ const Dashboard = () => {
       <Topbar title={topBarTitle} setSidebarToggle={setSidebarToggle} />
       <div
         className={`main w-full overflow-x-hidden pb-6 pt-4 xl:pt-8 ${
-          pathname !== "/dashboard" ? "bg-[#F8FAFC]" : "bg-bgDark"
+          pathname !== "/dashboard" && pathname !== "/dashboard/analytics"
+            ? "bg-[#F8FAFC]"
+            : "bg-bgDark"
         }`}
       >
         <Outlet />

@@ -1,9 +1,14 @@
+import { Link } from "react-router-dom";
+
 const Categories = () => {
   return (
     <div className="contain justify-start gap-7 sm:gap-4 bg-white items-start flex-col w-full p-4 sm:p-6 rounded-xl">
       <div className="flex justify-between sm:flex-row flex-col items-start sm:items-center w-full gap-4 sm:gap-2">
         <h2 className="title">Top Categories</h2>
-        <button className="flex justify-center items-center gap-3 px-5 py-2 text-secondary border border-solid border-secondary bg-transparent hover:bg-secondary hover:text-white transition-all duration-300 font-bold text-sm rounded-full">
+        <Link
+          to="/dashboard/analytics"
+          className="flex justify-center items-center gap-3 px-5 py-2 text-secondary border border-solid border-secondary bg-transparent hover:bg-secondary hover:text-white transition-all duration-300 font-bold text-sm rounded-full"
+        >
           View all emission by category{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +24,7 @@ const Categories = () => {
               d="M8.25 4.5l7.5 7.5-7.5 7.5"
             />
           </svg>
-        </button>
+        </Link>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full gap-6">
         <div className="flex rounded-[10px] justify-start py-12 w-full items-center flex-col  bg-[#DEF2E9]">

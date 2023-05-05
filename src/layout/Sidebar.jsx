@@ -34,7 +34,7 @@ const Sidebar = ({ sidebarToggle, setSidebarToggle }) => {
           setSidebarToggle={setSidebarToggle}
           ico="/category.png"
           name="Dashboard"
-          url="/"
+          url=""
         />
         <SidebarLink
           setSidebarToggle={setSidebarToggle}

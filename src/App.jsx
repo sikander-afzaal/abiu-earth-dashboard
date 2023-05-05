@@ -16,6 +16,8 @@ import Step1 from "./pages/forgot_password/Step1";
 import NewPwd from "./pages/forgot_password/NewPwd";
 import Success from "./pages/forgot_password/Success";
 import Otp from "./pages/forgot_password/Otp";
+import Profile from "./pages/profile/Index";
+import PersonalInfo from "./pages/profile/PersonalInfo";
 
 const App = () => {
   return (
@@ -23,6 +25,9 @@ const App = () => {
       <Route element={<SignUp />} path="/">
         <Route element={<Choose />} path="" />
         <Route element={<Create />} path="create" />
+      </Route>
+      <Route element={<Profile />} path="/profile">
+        <Route element={<PersonalInfo />} path="" />
       </Route>
       <Route element={<Forgot_Pwd />} path="/forgot_pwd">
         <Route element={<Step1 />} path="" />

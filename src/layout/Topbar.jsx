@@ -1,9 +1,9 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Notification from "../components/Notification";
 import { useCallback, useRef, useState } from "react";
 import { useOnClickOutside } from "../hooks/useOutsideClick";
 
-const Topbar = ({ setSidebarToggle }) => {
+const Topbar = ({ setSidebarToggle, profile }) => {
   const notifBarRef = useRef(null);
   const { pathname } = useLocation();
   const [notifBar, setNotifBar] = useState(false);
@@ -17,14 +17,14 @@ const Topbar = ({ setSidebarToggle }) => {
   return (
     <div
       className={`topbar  flex justify-between items-center px-8 w-full ${
-        pathname !== "/dashboard" ? "bg-[#F8FAFC]" : "bg-bgDark"
+        pathname === "/dashboard" || profile ? "bg-bgDark" : "bg-[#F8FAFC]"
       }`}
     >
       <div className="flex justify-start items-center gap-2">
         <button
           onClick={() => setSidebarToggle(true)}
           className={`xl:hidden block ${
-            pathname !== "/dashboard" ? "text-black" : "text-white"
+            pathname === "/dashboard" || profile ? "text-white" : "text-black"
           }`}
         >
           <svg
@@ -42,16 +42,43 @@ const Topbar = ({ setSidebarToggle }) => {
             />
           </svg>
         </button>
-        <p className="text-primaryShade sm:block hidden text-xl lg:text-2xl font-bold">
-          Automated Emissions analysis
-        </p>
+        {profile ? (
+          <div className="flex justify-start items-center gap-3">
+            <Link
+              to="/dashboard"
+              className="bg-secondary rounded-full min-w-[40px] text-white w-10 h-10 grid place-items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+            </Link>
+            <p className="text-primaryShade sm:block hidden text-xl lg:text-2xl font-bold">
+              Profile
+            </p>
+          </div>
+        ) : (
+          <p className="text-primaryShade sm:block hidden text-xl lg:text-2xl font-bold">
+            Automated Emissions analysis
+          </p>
+        )}
       </div>
       <div className="flex justify-center items-center gap-4">
         <div
           className={`w-[260px] rounded-[10px] overflow-hidden  border border-solid p-3 hidden lg:flex justify-start ${
-            pathname !== "/dashboard"
-              ? "bg-white border-[#CBD5E1]"
-              : "bg-[#282C38] border-baseGray"
+            pathname === "/dashboard" || profile
+              ? "bg-[#282C38] border-baseGray"
+              : "bg-white border-[#CBD5E1]"
           } items-center gap-3`}
         >
           <svg
@@ -83,7 +110,7 @@ const Topbar = ({ setSidebarToggle }) => {
         <img
           src="/bell.png"
           className={`w-[32px] object-contain ${
-            pathname !== "/dashboard" ? "invert" : "invert-0"
+            pathname === "/dashboard" || profile ? "invert-0" : "invert"
           }`}
           alt=""
         />

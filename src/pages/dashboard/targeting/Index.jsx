@@ -2,6 +2,7 @@ import { useState } from "react";
 import SelectMenu from "../../../components/form/SelectMenu";
 import InputField from "../../../components/form/InputField";
 import Table from "./Table";
+import { StackedBarVertical } from "../../../components/charts/StackVertical";
 
 const Targeting = () => {
   const [formData, setFormData] = useState({
@@ -100,11 +101,9 @@ const Targeting = () => {
               <span className="text-xs font-normal ">CO2e</span>
             </h2>
 
-            <img
-              src="/chart3.png"
-              className="w-full h-full  max-w-[700px] self-center  object-contain"
-              alt=""
-            />
+            <div className="w-full">
+              <StackedBarVertical />
+            </div>
           </div>
         </div>
         <Table />

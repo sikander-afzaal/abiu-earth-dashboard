@@ -1,3 +1,6 @@
+import DoughnutChart from "../../../components/charts/Doughnut";
+import { LineChart } from "../../../components/charts/LineChart";
+
 const Analytics = () => {
   return (
     <div className="contain justify-start items-center flex-col">
@@ -9,11 +12,9 @@ const Analytics = () => {
               <img src="/menu.png" alt="" />
             </button>
           </div>
-          <img
-            src="/chart1.png"
-            className="w-full mt-auto max-w-[340px] object-contain"
-            alt=""
-          />
+          <div className="max-w-[550px] xl:max-w-none w-full ">
+            <DoughnutChart />
+          </div>
         </div>
         <div className="w-full flex justify-start gap-5 items-center flex-col p-4 sm:p-6 bg-white rounded-xl">
           <div className="w-full flex justify-between items-center gap-2">
@@ -25,11 +26,7 @@ const Analytics = () => {
               <img src="/menu.png" alt="" />
             </button>
           </div>
-          <img
-            src="/chart2.png"
-            className="w-full max-w-[800px] object-contain"
-            alt=""
-          />
+          <LineChart />
         </div>
       </div>
     </div>

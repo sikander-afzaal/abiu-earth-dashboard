@@ -1,3 +1,5 @@
+import { StackedBar } from "../../../components/charts/DoubleBar";
+
 const Chart = () => {
   return (
     <div className="bg-white rounded-[10px] flex justify-start items-center flex-col w-full gap-5 py-4 px-4 sm:px-6">
@@ -25,11 +27,9 @@ const Chart = () => {
           </div>
         </div>
       </div>
-      <img
-        src="/chart4.png"
-        className="w-full max-w-[1400px] object-contain"
-        alt=""
-      />
+      <div className="w-full">
+        <StackedBar />
+      </div>
     </div>
   );
 };

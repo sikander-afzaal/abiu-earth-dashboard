@@ -3,7 +3,7 @@ import { useState } from "react";
 const Notification = () => {
   const [tabs, setTabs] = useState("All");
   return (
-    <div className="rounded-[8px] top-[80px] sm:top-full shadow-notif fixed sm:absolute right-1/2 sm:translate-x-0 translate-x-1/2 sm:right-full bg-white flex justify-start items-start flex-col  w-[95%] sm:w-[400px]">
+    <div className="rounded-[8px] z-[60] top-[80px] sm:top-full shadow-notif fixed sm:absolute right-1/2 sm:translate-x-0 translate-x-1/2 sm:right-full bg-white flex justify-start items-start flex-col  w-[95%] sm:w-[400px]">
       <div className="flex py-6 px-4 justify-between items-center w-full">
         <p className="text-[#0F172A] text-xl font-bold font-inter">
           Notifications

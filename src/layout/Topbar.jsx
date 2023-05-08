@@ -118,28 +118,30 @@ const Topbar = ({ setSidebarToggle, profile, title }) => {
             />
           </div>
           <div className="bg-primary h-[23px] w-[2px]"></div>
-          <img
-            src="/bell.png"
-            className={`w-[32px] object-contain ${
-              pathname === "/dashboard" ||
-              pathname === "/dashboard/analytics" ||
-              profile
-                ? "invert-0"
-                : "invert"
-            }`}
-            alt=""
-          />
-          <div className="bg-primary h-[23px] w-[2px]"></div>
           <div ref={notifBarRef} className="relative">
             <button onClick={() => setNotifBar((prev) => !prev)}>
               <img
-                src="/user.png"
-                className="w-[42px] object-contain h-[42px] rounded-full"
+                src="/bell.png"
+                className={`w-[32px] object-contain ${
+                  pathname === "/dashboard" ||
+                  pathname === "/dashboard/analytics" ||
+                  profile
+                    ? "invert-0"
+                    : "invert"
+                }`}
                 alt=""
               />
             </button>
             {notifBar && <Notification />}
           </div>
+          <div className="bg-primary h-[23px] w-[2px]"></div>
+          <Link to="/profile">
+            <img
+              src="/user.png"
+              className="w-[42px] object-contain h-[42px] rounded-full"
+              alt=""
+            />
+          </Link>
         </div>
       </div>
     </div>

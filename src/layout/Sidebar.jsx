@@ -99,7 +99,7 @@ const SidebarLink = ({ url, name, ico, setSidebarToggle, end = true }) => {
             src={ico}
             className={`${
               isActive ? "invert brightness-0" : ""
-            } w-[28px] h-[28px] object-contain"`}
+            } max-w-[28px]  object-contain"`}
             alt=""
           />
           <p

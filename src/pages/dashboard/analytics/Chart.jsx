@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { StackedBar } from "../../../components/charts/DoubleBar";
+import { StackedBarVertical } from "../../../components/charts/StackVertical";
 
 const Chart = () => {
+  const [prevYear, setPrevYear] = useState(false);
   return (
     <div className="bg-white rounded-[10px] flex justify-start items-center flex-col w-full gap-5 py-4 px-4 sm:px-6">
       <div className="flex justify-between items-start flex-wrap w-full gap-2">
@@ -10,7 +13,12 @@ const Chart = () => {
         </h2>
         <div className="flex justify-center flex-wrap items-center pt-2 gap-4">
           <div className="flex justify-start items-center gap-2">
-            <input type="checkbox" className="accent-secondary w-4 h-4" />
+            <input
+              type="checkbox"
+              checked={prevYear}
+              onChange={(e) => setPrevYear((prev) => !prev)}
+              className="accent-secondary w-4 h-4"
+            />
             <p className="text-[#334155] text-sm">Compare with previous year</p>
           </div>
           <div className="flex justify-start items-center gap-2">
@@ -28,7 +36,7 @@ const Chart = () => {
         </div>
       </div>
       <div className="w-full">
-        <StackedBar />
+        {prevYear ? <StackedBar /> : <StackedBarVertical />}
       </div>
     </div>
   );

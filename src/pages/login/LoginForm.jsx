@@ -65,6 +65,10 @@ const LoginForm = () => {
           <button className="bg-secondary rounded-xl w-full h-[56px] font-inter font-bold text-base hover:bg-transparent hover:text-secondary border-2 border-solid border-secondary transition-all duration-300 text-white grid place-items-center">
             Sign In
           </button>
+          <button className="bg-white rounded-xl flex justify-center items-center gap-2 w-full h-[56px] font-inter font-bold text-base hover:bg-secondary hover:text-white border-2 border-solid border-secondary transition-all duration-300 text-secondary ">
+            <img src="/google.png" className="w-7 object-contain" alt="" />{" "}
+            Login With Google
+          </button>
           <p className="text-sm font-inter text-[#0F172A]">
             Dont't have an account?{" "}
             <Link to="/" className="text-secondary font-bold">

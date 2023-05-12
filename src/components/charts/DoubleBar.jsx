@@ -64,31 +64,37 @@ export const data = {
   labels,
   datasets: [
     {
+      label: "Energy",
       data: labels.map((elem, idx) => (idx + 1) * 50 * Math.random()),
       backgroundColor: "#ADDFC7",
       stack: "Stack 1",
     },
     {
+      label: "Building",
       data: labels.map((elem, idx) => (idx + 1) * 50 * Math.random()),
       backgroundColor: "#FFD2B5",
       stack: "Stack 1",
     },
     {
+      label: "Travel",
       data: labels.map((elem, idx) => (idx + 1) * 50 * Math.random()),
       backgroundColor: "#FF7722",
       stack: "Stack 1",
     },
     {
+      label: "Employee",
       data: labels.map((elem, idx) => (idx + 1) * 50 * Math.random()),
       backgroundColor: "#ADDFC7",
       stack: "Stack 2",
     },
     {
+      label: "Employee",
       data: labels.map((elem, idx) => (idx + 1) * 50 * Math.random()),
       backgroundColor: "#FFD2B5",
       stack: "Stack 2",
     },
     {
+      label: "Employee",
       data: labels.map((elem, idx) => (idx + 1) * 50 * Math.random()),
       backgroundColor: "#FF7722",
       stack: "Stack 2",
